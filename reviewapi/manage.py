@@ -19,4 +19,7 @@ def main():
 
 
 if __name__ == "__main__":
+    if os.geteuid() == 0:
+        print("Do not run this script as root for security reasons.")
+        sys.exit(1)
     main()
